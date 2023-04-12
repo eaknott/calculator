@@ -1,0 +1,71 @@
+#container {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    background-color: grey;
+    height: 600px;
+    width: 500px;
+    border-radius: 15px;
+}
+
+#displayContainer {
+    display: flex;
+    margin: 15px 10px auto 10px;
+    background-color: orange;
+    height: 150px;
+    width: 470px;
+    border-radius: 15px;
+}
+
+#buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    height: 430px;
+    width: 480px;
+    border-radius: 15px;
+    margin: 10px;
+}
+
+.clearButton {
+    grid-area: 1 / 1 / 2 / 4;
+    background-color: red;
+}
+
+.divideButton {
+    grid-area: 1 / 4 / 2 / 5;
+}
+
+.multiplyButton {
+    grid-area: 2 / 4 / 3 / 5;
+}
+
+.subtractButton {
+    grid-area: 3 / 4 / 4 / 5;
+}
+
+.addButton {
+    grid-area: 4 / 4 / 5 / 5;
+}
+
+.equalButton {
+    grid-area: 5 / 4 / 6 / 5;
+}
+
+.digit0 {
+    grid-area: 5 / 2 / 6 / 4;
+}
+
+button {
+    border-radius: 15px;
+    margin: 4px;
+    font-family: Gill Sans, sans-serif;
+    font-size: 35px;
+    font-weight: 500;
+}
+
+.divideButton, .multiplyButton, .subtractButton, .addButton, .equalButton {
+    background-color: green;
+}
