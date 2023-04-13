@@ -1,10 +1,10 @@
 #container {
     display: flex;
     flex-direction: column;
-    margin: auto;
+    margin: 50px auto auto auto;
     justify-content: center;
     align-items: center;
-    background-color: grey;
+    background-color: rgb(82,94,117);
     height: 600px;
     width: 500px;
     border-radius: 15px;
@@ -13,7 +13,7 @@
 #displayContainer {
     display: flex;
     margin: 15px 10px auto 10px;
-    background-color: orange;
+    background-color: rgb(146,186,146);
     height: 150px;
     width: 470px;
     border-radius: 15px;
@@ -31,7 +31,7 @@
 
 .clearButton {
     grid-area: 1 / 1 / 2 / 4;
-    background-color: red;
+    background-color: rgb(120,147,138);
 }
 
 .divideButton {
@@ -67,5 +67,9 @@ button {
 }
 
 .divideButton, .multiplyButton, .subtractButton, .addButton, .equalButton {
-    background-color: green;
+    background-color: rgb(241,221,191);
+}
+
+.digit0, .digit1, .digit2, .digit3, .digit4, .digit5, .digit6, .digit7, .digit8, .digit9 {
+    background-color: rgb(217,137,181);
 }
