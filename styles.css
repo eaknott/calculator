@@ -12,11 +12,27 @@
 
 #displayContainer {
     display: flex;
+    flex-flow: column;
     margin: 15px 10px auto 10px;
     background-color: rgb(146,186,146);
     height: 150px;
     width: 470px;
     border-radius: 15px;
+    font-family: Gill Sans, sans-serif;
+}
+
+.mainDisplay {
+    font-size: 90px;
+}
+
+.storedDisplay {
+    font-size: 30px;
+    margin-top: 10px;
+}
+
+.mainDisplay, .storedDisplay {
+    margin-left: auto;
+    padding-right: 40px;
 }
 
 #buttons {
