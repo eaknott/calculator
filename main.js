@@ -8,29 +8,30 @@ let solution;
 let nextOperator;
 
 function display(digit) {
-    if (mainDisplay.textContent.length < 9 ) {
-        if (mainDisplay.textContent && firstNum.textContent && operator.textContent && nextNum.textContent) {
-            if (solution && nextOperator) {
-                firstNum.textContent = mainDisplay.textContent;
-                nextNum.textContent = "";
-                operator.textContent = `${nextOperator}`;
-                mainDisplay.textContent = "";
-                mainDisplay.textContent += `${digit}`;
-            } else {
-            firstNum.textContent = "";
+    if (mainDisplay.textContent.includes(".") && digit == ".") {
+        return;
+    }
+    if (mainDisplay.textContent && firstNum.textContent && operator.textContent && nextNum.textContent) {
+        if (solution && nextOperator) {
+            firstNum.textContent = mainDisplay.textContent;
             nextNum.textContent = "";
-            operator.textContent = "";
-            mainDisplay.textContent = `${digit}`;
-        }
-        } else if (mainDisplay.textContent && firstNum.textContent && operator.textContent && nextNum.textContent == "") {
+            operator.textContent = `${nextOperator}`;
+            mainDisplay.textContent = "";
             mainDisplay.textContent += `${digit}`;
-        } else if (mainDisplay.textContent == "" && firstNum.textContent && operator.textContent && nextNum.textContent == "") {
-            mainDisplay.textContent += `${digit}`;
-        } else if (!mainDisplay.textContent) {
-            mainDisplay.textContent = `${digit}`;
         } else {
-            mainDisplay.textContent += `${digit}`;
-        }    
+        firstNum.textContent = "";
+        nextNum.textContent = "";
+        operator.textContent = "";
+        mainDisplay.textContent = `${digit}`;
+    }
+    } else if (mainDisplay.textContent && firstNum.textContent && operator.textContent && nextNum.textContent == "") {
+        mainDisplay.textContent += `${digit}`;
+    } else if (mainDisplay.textContent == "" && firstNum.textContent && operator.textContent && nextNum.textContent == "") {
+        mainDisplay.textContent += `${digit}`;
+    } else if (!mainDisplay.textContent) {
+        mainDisplay.textContent = `${digit}`;
+    } else {
+        mainDisplay.textContent += `${digit}`;
     }
 }
 
@@ -43,9 +44,10 @@ function addNumbers () {
                     firstNum.textContent = mainDisplay.textContent;
                     nextNum.textContent = "";
                     mainDisplay.textContent = "";
-                    nextOperator = " + ";    
-                }
-                } else if (!solution) {
+                    nextOperator = " + ";   
+                    operator.textContent = `${nextOperator}`;
+                } 
+            } else if (!solution) {
             firstNum.textContent = mainDisplay.textContent;
             operator.textContent = " + ";
             nextNum.textContent = "";
@@ -54,15 +56,17 @@ function addNumbers () {
         } else if (mainDisplay.textContent && firstNum.textContent && nextNum.textContent == "" && operator.textContent) {
             nextNum.textContent = mainDisplay.textContent;
             solution = operate(firstNum.textContent, operator.textContent, nextNum.textContent);
-            if (solution == Infinity) {
-                mainDisplay.textContent = "Nice try";
+            if (solution === Infinity || solution === -Infinity) {
+                mainDisplay.textContent = "nice try";
+            } else if (solution == NaN) {
+                mainDisplay.textContent = "yikes";  
             } else {
                 mainDisplay.textContent = `${solution}`;
                 if (mainDisplay.textContent.length > 10) {
                     mainDisplay.textContent = mainDisplay.textContent.slice(0, 10);
                 }    
             }
-                nextOperator = " + ";
+                    nextOperator = " + ";
         } else if (mainDisplay.textContent && firstNum.textContent == "" && operator.textContent == "" && nextNum.textContent == "") {
             firstNum.textContent = mainDisplay.textContent;
             operator.textContent = " + ";
@@ -80,6 +84,7 @@ function subtractNumbers () {
                 nextNum.textContent = "";
                 mainDisplay.textContent = "";
                 nextOperator = " - ";    
+                operator.textContent = `${nextOperator}`;
             }
         } else if (!solution) {
         firstNum.textContent = mainDisplay.textContent;
@@ -90,8 +95,10 @@ function subtractNumbers () {
     } else if (mainDisplay.textContent && firstNum.textContent && nextNum.textContent == "" && operator.textContent) {
         nextNum.textContent = mainDisplay.textContent;
         solution = operate(firstNum.textContent, operator.textContent, nextNum.textContent);
-        if (solution == Infinity) {
-            mainDisplay.textContent = "Nice try";
+        if (solution === Infinity || solution === -Infinity) {
+            mainDisplay.textContent = "nice try";
+        } else if (solution == NaN) {
+            mainDisplay.textContent = "yikes";  
         } else {
             mainDisplay.textContent = `${solution}`;
             if (mainDisplay.textContent.length > 10) {
@@ -115,7 +122,8 @@ function multiplyNumbers () {
                 firstNum.textContent = mainDisplay.textContent;
                 nextNum.textContent = "";
                 mainDisplay.textContent = "";
-                nextOperator = " * ";    
+                nextOperator = " * ";
+                operator.textContent = `${nextOperator}`;
             }
         } else if (!solution) {
         firstNum.textContent = mainDisplay.textContent;
@@ -126,8 +134,10 @@ function multiplyNumbers () {
     } else if (mainDisplay.textContent && firstNum.textContent && nextNum.textContent == "" && operator.textContent) {
         nextNum.textContent = mainDisplay.textContent;
         solution = operate(firstNum.textContent, operator.textContent, nextNum.textContent);
-        if (solution == Infinity) {
-            mainDisplay.textContent = "Nice try";
+        if (solution === Infinity || solution === -Infinity) {
+            mainDisplay.textContent = "nice try";
+        } else if (solution == NaN) {
+            mainDisplay.textContent = "yikes";  
         } else {
             mainDisplay.textContent = `${solution}`;
             if (mainDisplay.textContent.length > 10) {
@@ -151,7 +161,8 @@ function divideNumbers () {
                 firstNum.textContent = mainDisplay.textContent;
                 nextNum.textContent = "";
                 mainDisplay.textContent = "";
-                nextOperator = " / ";    
+                nextOperator = " / "; 
+                operator.textContent = `${nextOperator}`;   
             }
         } else if (!solution) {
         firstNum.textContent = mainDisplay.textContent;
@@ -162,8 +173,10 @@ function divideNumbers () {
     } else if (mainDisplay.textContent && firstNum.textContent && nextNum.textContent == "" && operator.textContent) {
         nextNum.textContent = mainDisplay.textContent;
         solution = operate(firstNum.textContent, operator.textContent, nextNum.textContent);
-        if (solution == Infinity) {
-            mainDisplay.textContent = "Nice try";
+        if (solution === Infinity || solution === -Infinity) {
+            mainDisplay.textContent = "nice try";
+        } else if (solution == NaN) {
+            mainDisplay.textContent = "yikes";  
         } else {
             mainDisplay.textContent = `${solution}`;
             if (mainDisplay.textContent.length > 10) {
@@ -204,8 +217,10 @@ function equalButton() {
     if (mainDisplay.textContent && firstNum.textContent && operator.textContent && nextNum.textContent == "") {
         nextNum.textContent = mainDisplay.textContent;
         solution = operate(firstNum.textContent, operator.textContent, nextNum.textContent);
-        if (solution == Infinity) {
-            mainDisplay.textContent = "Nice try";
+        if (solution === Infinity || solution === -Infinity) {
+            mainDisplay.textContent = "nice try";
+        } else if (solution == NaN) {
+            mainDisplay.textContent = "yikes";  
         } else {
             mainDisplay.textContent = `${solution}`;
             if (mainDisplay.textContent.length > 10) {
