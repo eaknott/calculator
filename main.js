@@ -54,8 +54,15 @@ function addNumbers () {
         } else if (mainDisplay.textContent && firstNum.textContent && nextNum.textContent == "" && operator.textContent) {
             nextNum.textContent = mainDisplay.textContent;
             solution = operate(firstNum.textContent, operator.textContent, nextNum.textContent);
-            mainDisplay.textContent = `${solution}`;
-            nextOperator = " + ";
+            if (solution == Infinity) {
+                mainDisplay.textContent = "Nice try";
+            } else {
+                mainDisplay.textContent = `${solution}`;
+                if (mainDisplay.textContent.length > 10) {
+                    mainDisplay.textContent = mainDisplay.textContent.slice(0, 10);
+                }    
+            }
+                nextOperator = " + ";
         } else if (mainDisplay.textContent && firstNum.textContent == "" && operator.textContent == "" && nextNum.textContent == "") {
             firstNum.textContent = mainDisplay.textContent;
             operator.textContent = " + ";
@@ -83,7 +90,14 @@ function subtractNumbers () {
     } else if (mainDisplay.textContent && firstNum.textContent && nextNum.textContent == "" && operator.textContent) {
         nextNum.textContent = mainDisplay.textContent;
         solution = operate(firstNum.textContent, operator.textContent, nextNum.textContent);
-        mainDisplay.textContent = `${solution}`;
+        if (solution == Infinity) {
+            mainDisplay.textContent = "Nice try";
+        } else {
+            mainDisplay.textContent = `${solution}`;
+            if (mainDisplay.textContent.length > 10) {
+                mainDisplay.textContent = mainDisplay.textContent.slice(0, 10);
+            }    
+        }
         nextOperator = " - ";
     } else if (mainDisplay.textContent && firstNum.textContent == "" && operator.textContent == "" && nextNum.textContent == "") {
         firstNum.textContent = mainDisplay.textContent;
@@ -112,7 +126,14 @@ function multiplyNumbers () {
     } else if (mainDisplay.textContent && firstNum.textContent && nextNum.textContent == "" && operator.textContent) {
         nextNum.textContent = mainDisplay.textContent;
         solution = operate(firstNum.textContent, operator.textContent, nextNum.textContent);
-        mainDisplay.textContent = `${solution}`;
+        if (solution == Infinity) {
+            mainDisplay.textContent = "Nice try";
+        } else {
+            mainDisplay.textContent = `${solution}`;
+            if (mainDisplay.textContent.length > 10) {
+                mainDisplay.textContent = mainDisplay.textContent.slice(0, 10);
+            }    
+        }
         nextOperator = " * ";
     } else if (mainDisplay.textContent && firstNum.textContent == "" && operator.textContent == "" && nextNum.textContent == "") {
         firstNum.textContent = mainDisplay.textContent;
@@ -141,7 +162,14 @@ function divideNumbers () {
     } else if (mainDisplay.textContent && firstNum.textContent && nextNum.textContent == "" && operator.textContent) {
         nextNum.textContent = mainDisplay.textContent;
         solution = operate(firstNum.textContent, operator.textContent, nextNum.textContent);
-        mainDisplay.textContent = `${solution}`;
+        if (solution == Infinity) {
+            mainDisplay.textContent = "Nice try";
+        } else {
+            mainDisplay.textContent = `${solution}`;
+            if (mainDisplay.textContent.length > 10) {
+                mainDisplay.textContent = mainDisplay.textContent.slice(0, 10);
+            }    
+        }
         nextOperator = " / ";
     } else if (mainDisplay.textContent && firstNum.textContent == "" && operator.textContent == "" && nextNum.textContent == "") {
         firstNum.textContent = mainDisplay.textContent;
@@ -176,7 +204,14 @@ function equalButton() {
     if (mainDisplay.textContent && firstNum.textContent && operator.textContent && nextNum.textContent == "") {
         nextNum.textContent = mainDisplay.textContent;
         solution = operate(firstNum.textContent, operator.textContent, nextNum.textContent);
-        mainDisplay.textContent = `${solution}`;
+        if (solution == Infinity) {
+            mainDisplay.textContent = "Nice try";
+        } else {
+            mainDisplay.textContent = `${solution}`;
+            if (mainDisplay.textContent.length > 10) {
+                mainDisplay.textContent = mainDisplay.textContent.slice(0, 10);
+            }    
+        }
         nextOperator = "";
     }
 }
