@@ -26,3 +26,21 @@ Notes for this project:
 8. Round numbers with long decimals, to avoid overflowing the display
 9. Pressing " = " before entering other info could cause problems !
 10. Display a snarky error message if user tries to divide by 0... and don't let it crash your calculator !
+
+
+
+
+: : : :  : :  : : : : : : :  : :  :NEXT : : : : STEPS: : : : : :  : : :: :  : : : : : : :  : :
+
+
+- decimal button
+    - check if mainDisplay already has a decimal in it
+
+- solution
+    - limit the number of decimal points places displayed
+    OR
+    - convert to string and limit the number of characters displayed
+    ?
+
+
+: : : : : ::  : : : :: : :  :: : :  : : : :  : : :  : : :  : : :: : :  : : :  : : : :  : :  : 
