@@ -53,3 +53,7 @@ Went through numbered list of requirements for the project, and all tests are pa
 BONUS::: : :
 want to add a "C" button to backspace mainDisplay.textContent from the right
 >>>>>>>>>>>>>DONE
+
+
+BONUS::::
+want to add keyboard support !!
