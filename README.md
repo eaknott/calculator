@@ -35,12 +35,20 @@ Notes for this project:
 
 - decimal button
     - check if mainDisplay already has a decimal in it
-
+>>>>>>>DONE
 - solution
     - limit the number of decimal points places displayed
     OR
     - convert to string and limit the number of characters displayed
     ?
-
+>>>>>>>>DONE
 
 : : : : : ::  : : : :: : :  :: : :  : : : :  : : :  : : :  : : :: : :  : : :  : : : :  : :  : 
+
+
+
+Finish next steps
+Went through numbered list of requirements for the project, and all tests are passed.
+
+BONUS::: : :
+want to add a "C" button to backspace mainDisplay.textContent from the right
