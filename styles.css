@@ -13,7 +13,7 @@
 #displayContainer {
     display: flex;
     flex-flow: column;
-    margin: 15px 10px auto 10px;
+    margin: 15px 10px 10px 10px;
     background-color: rgb(146,186,146);
     height: 150px;
     width: 470px;
@@ -23,16 +23,24 @@
 
 .mainDisplay {
     font-size: 90px;
+    margin-top: auto;
 }
 
 .storedDisplay {
+    display: inline-flex;
+    flex-direction: row;
     font-size: 30px;
-    margin-top: 10px;
+    margin-bottom: auto;
+    margin-top: 5px;
+}
+
+.firstNum, .operator, .nextNum {
+    margin: 0 10px;
 }
 
 .mainDisplay, .storedDisplay {
     margin-left: auto;
-    padding-right: 40px;
+    padding-right: 25px;
 }
 
 #buttons {
