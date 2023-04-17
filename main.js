@@ -160,14 +160,23 @@ function allClear() {
 function operate(first, op, next) {
     let solution;
     if (op == " + ") {
-        solution = parseInt(first) + parseInt(next);
+        solution = parseFloat(first) + parseFloat(next);
     } else if (op == " - ") {
-        solution = parseInt(first) - parseInt(next);
+        solution = parseFloat(first) - parseFloat(next);
     } else if (op == " * ") {
-        solution = parseInt(first) * parseInt(next);
+        solution = parseFloat(first) * parseFloat(next);
     } else if (op == " / ") {
-        solution = parseInt(first) / parseInt(next);
+        solution = parseFloat(first) / parseFloat(next);
     }
 
     return solution;
+}
+
+function equalButton() {
+    if (mainDisplay.textContent && firstNum.textContent && operator.textContent && nextNum.textContent == "") {
+        nextNum.textContent = mainDisplay.textContent;
+        solution = operate(firstNum.textContent, operator.textContent, nextNum.textContent);
+        mainDisplay.textContent = `${solution}`;
+        nextOperator = "";
+    }
 }
