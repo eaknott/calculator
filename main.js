@@ -196,6 +196,19 @@ function allClear() {
     firstNum.textContent = "";
     operator.textContent = "";
     nextNum.textContent = "";
+    nextOperator = 0;
+    solution = 0;
+}
+
+function backspace() {
+    if (mainDisplay.textContent && operator.textContent && nextNum.textContent && firstNum.textContent) {
+        mainDisplay.textContent = "";
+    }        
+    if (mainDisplay.textContent != "") {
+        mainDisplay.textContent = mainDisplay.textContent.slice(0, -1);
+    } else {
+        mainDisplay.textContent = "";
+    }
 }
 
 function operate(first, op, next) {
