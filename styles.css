@@ -1,3 +1,7 @@
+html, body {
+    background-color: #52796f;
+}
+
 #container {
     display: flex;
     flex-direction: column;
@@ -21,7 +25,7 @@
     font-family: Gill Sans, sans-serif;
 }
 
-.mainDisplay {
+#display {
     font-size: 90px;
     margin-top: auto;
 }
@@ -38,7 +42,7 @@
     margin: 0 10px;
 }
 
-.mainDisplay, .storedDisplay {
+#display, .storedDisplay {
     margin-left: auto;
     padding-right: 25px;
 }
@@ -53,7 +57,7 @@
     margin: 10px;
 }
 
-.clearButton {
+#clear {
     grid-area: 1 / 1 / 2 / 3;
     background-color: rgb(120,147,138);
 }
@@ -63,27 +67,27 @@
     background-color: rgb(120,147,138);
 }
 
-.divideButton {
+#divide {
     grid-area: 1 / 4 / 2 / 5;
 }
 
-.multiplyButton {
+#multiply {
     grid-area: 2 / 4 / 3 / 5;
 }
 
-.subtractButton {
+#subtract {
     grid-area: 3 / 4 / 4 / 5;
 }
 
-.addButton {
+#add {
     grid-area: 4 / 4 / 5 / 5;
 }
 
-.equalButton {
+#equals {
     grid-area: 5 / 4 / 6 / 5;
 }
 
-.digit0 {
+#zero {
     grid-area: 5 / 2 / 6 / 4;
 }
 
@@ -95,10 +99,10 @@ button {
     font-weight: 500;
 }
 
-.divideButton, .multiplyButton, .subtractButton, .addButton, .equalButton {
+#divide, #multiply, #add, #subtract, #equals {
     background-color: rgb(241,221,191);
 }
 
-.digit0, .digit1, .digit2, .digit3, .digit4, .digit5, .digit6, .digit7, .digit8, .digit9 {
+#one, #two, #three, #four, #five, #six, #seven, #eight, #nine  {
     background-color: rgb(217,137,181);
 }
