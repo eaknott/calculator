@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
-        <title>Calculator</title>
+        <title>JavaScript Calculator</title>
         <link rel="stylesheet" href="styles.css">
         <script src="main.js" defer></script>
     </head>
@@ -15,27 +15,27 @@
                     <div class="operator"></div>
                     <div class="nextNum"></div>
                 </div>
-                <div class="mainDisplay"></div>
+                <div id="display">0</div>
             </div>
             <div id="buttons">
-                <button class="clearButton" onclick="allClear()">AC</button>
+                <button id="clear" onclick="allClear()">AC</button>
                 <button class="backspaceButton" onclick="backspace()">C</button>
-                <button class="digit7" onclick="display('7')">7</button>
-                <button class="digit8" onclick="display('8')">8</button>
-                <button class="digit9" onclick="display('9')">9</button>
-                <button class="digit4" onclick="display('4')">4</button>
-                <button class="digit5" onclick="display('5')">5</button>
-                <button class="digit6" onclick="display('6')">6</button>
-                <button class="digit1" onclick="display('1')">1</button>
-                <button class="digit2" onclick="display('2')">2</button>
-                <button class="digit3" onclick="display('3')">3</button>
-                <button class="digit0" onclick="display('0')">0</button>
-                <button class="digitDecimal" onclick="display('.')">.</button>
-                <button class="divideButton" onclick="divideNumbers()">/</button>
-                <button class="multiplyButton" onclick="multiplyNumbers()">*</button>
-                <button class="subtractButton" onclick="subtractNumbers()">-</button>
-                <button class="addButton" onclick="addNumbers()">+</button>
-                <button class="equalButton" onclick="equalButton()">=</button>
+                <button id="seven" onclick="display('7')">7</button>
+                <button id="eight" onclick="display('8')">8</button>
+                <button id="nine" onclick="display('9')">9</button>
+                <button id="four" onclick="display('4')">4</button>
+                <button id="five" onclick="display('5')">5</button>
+                <button id="six" onclick="display('6')">6</button>
+                <button id="one" onclick="display('1')">1</button>
+                <button id="two" onclick="display('2')">2</button>
+                <button id="three" onclick="display('3')">3</button>
+                <button id="zero" onclick="display('0')">0</button>
+                <button id="decimal" onclick="display('.')">.</button>
+                <button id="divide" onclick="divideNumbers()">/</button>
+                <button id="multiply" onclick="multiplyNumbers()">*</button>
+                <button id="subtract" onclick="subtractNumbers()">-</button>
+                <button id="add" onclick="addNumbers()">+</button>
+                <button id="equals" onclick="equalButton()">=</button>
             </div>
         </div>
     </body>
