@@ -1,4 +1,4 @@
-let mainDisplay = document.querySelector(".mainDisplay");
+let mainDisplay = document.querySelector("#display");
 let storedDisplay = document.querySelector(".storedDisplay");
 let firstNum = document.querySelector(".firstNum");
 let operator = document.querySelector(".operator");
@@ -8,6 +8,16 @@ let solution;
 let nextOperator;
 
 function display(digit) {
+    if (mainDisplay.textContent.length >= 9) {
+        return;
+    }
+    if (mainDisplay.textContent == "0" && digit == "0") {
+        return;
+    }
+    if (mainDisplay.textContent == "0") {
+        mainDisplay.textContent = "";
+    }
+    
     if (mainDisplay.textContent.includes(".") && digit == ".") {
         return;
     }
@@ -36,7 +46,10 @@ function display(digit) {
 }
 
 function addNumbers () {
-        if (mainDisplay.textContent && operator.textContent && firstNum.textContent && nextNum.textContent) {
+        if (mainDisplay.textContent == "-" && firstNum.textContent && nextNum.textContent == "" && operator.textContent) {
+        mainDisplay.textContent = "";
+        operator.textContent = " + ";
+        } else if (mainDisplay.textContent && operator.textContent && firstNum.textContent && nextNum.textContent) {
             if (solution) {
                 if (nextOperator) {
                     operator.textContent = `${nextOperator}`;
@@ -71,11 +84,16 @@ function addNumbers () {
             firstNum.textContent = mainDisplay.textContent;
             operator.textContent = " + ";
             mainDisplay.textContent = "";
-        }
+        } else if (mainDisplay.textContent == "" && firstNum.textContent && operator.textContent && nextNum.textContent == "") {
+            operator.textContent = " + ";
+        } 
 }
 
 function subtractNumbers () {
-    if (mainDisplay.textContent && operator.textContent && firstNum.textContent && nextNum.textContent) {
+    if (mainDisplay.textContent == "-" && firstNum.textContent && nextNum.textContent == "" && operator.textContent) {
+        mainDisplay.textContent = "";
+        operator.textContent = " - ";
+    } else if (mainDisplay.textContent && operator.textContent && firstNum.textContent && nextNum.textContent) {
         if (solution) {
             if (nextOperator) {
                 operator.textContent = `${nextOperator}`;
@@ -110,11 +128,16 @@ function subtractNumbers () {
         firstNum.textContent = mainDisplay.textContent;
         operator.textContent = " - ";
         mainDisplay.textContent = "";
-    }
+    } else if (mainDisplay.textContent == "" && firstNum.textContent && operator.textContent && nextNum.textContent == "") {
+        mainDisplay.textContent = "-";
+    } 
 }
 
 function multiplyNumbers () {
-    if (mainDisplay.textContent && operator.textContent && firstNum.textContent && nextNum.textContent) {
+    if (mainDisplay.textContent == "-" && firstNum.textContent && nextNum.textContent == "" && operator.textContent) {
+        mainDisplay.textContent = "";
+        operator.textContent = " * ";
+    } else if (mainDisplay.textContent && operator.textContent && firstNum.textContent && nextNum.textContent) {
         if (solution) {
             if (nextOperator) {
                 operator.textContent = `${nextOperator}`;
@@ -149,11 +172,16 @@ function multiplyNumbers () {
         firstNum.textContent = mainDisplay.textContent;
         operator.textContent = " * ";
         mainDisplay.textContent = "";
+    } else if (mainDisplay.textContent == "" && firstNum.textContent && operator.textContent && nextNum.textContent == "") {
+        operator.textContent = " * ";
     }
 }
 
 function divideNumbers () {
-    if (mainDisplay.textContent && operator.textContent && firstNum.textContent && nextNum.textContent) {
+    if (mainDisplay.textContent == "-" && firstNum.textContent && nextNum.textContent == "" && operator.textContent) {
+        mainDisplay.textContent = "";
+        operator.textContent = " / ";
+    } else if (mainDisplay.textContent && operator.textContent && firstNum.textContent && nextNum.textContent) {
         if (solution) {
             if (nextOperator) {
                 operator.textContent = `${nextOperator}`;
@@ -188,11 +216,13 @@ function divideNumbers () {
         firstNum.textContent = mainDisplay.textContent;
         operator.textContent = " / ";
         mainDisplay.textContent = "";
+    } else if (mainDisplay.textContent == "" && firstNum.textContent && operator.textContent && nextNum.textContent == "") {
+        operator.textContent = " / ";
     }
 }
 
 function allClear() {
-    mainDisplay.textContent = "";
+    mainDisplay.textContent = "0";
     firstNum.textContent = "";
     operator.textContent = "";
     nextNum.textContent = "";
