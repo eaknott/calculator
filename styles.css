@@ -23,6 +23,7 @@ html, body {
     width: 470px;
     border-radius: 15px;
     font-family: Gill Sans, sans-serif;
+    box-shadow: 3px 3px grey;
 }
 
 #display {
