@@ -56,11 +56,8 @@ When entered a number, the display limits the number of places in order to fit t
 
 The Clear ("C") button will clear the main display for a new entry, keeping the top display intact.
 
-<img src="clearedForNextResult.png" width="200">
+<img src="clearedForNextResult.png" width="200"> <img src="clearButton.png" width="200">
 
-<img src="clearButton.png" width="200">
-
-<br/>
 <br/>
 The All Clear ("AC") button will reset and clear all displays.
 
