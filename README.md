@@ -1,59 +1,81 @@
 # calculator
-Simple calculator made with Javascript, HTML, &amp; CSS
 
-The Odin Project's Foundations Course: Final Project
-https://www.theodinproject.com/lessons/foundations-calculator 
+A simple calculator made with Javascript, HTML, &amp; CSS.
 
-Notes for this project:
-1. Start with creating basic functions to test in the browser console
-    - add, subtract, multiply, divide
-2. For a display later, create variables for each of the 3 parts of an operation 
-    - (i.e. 90 + 5 --> variables stored: 90, +, 5 )
-3. Create a new function (operate) that takes an operator and 2 numbers, and then calls one of the basic functions on the numbers
-4. Create a basic HTML calculator with buttons for:
-    - each digit
-    - each of the basic functions
-    - an "Equal" (=) key
-    - calculator operation display
-    - a "Clear" (AC) button
-5. Create the functions that populate the display when the digit buttons are clicked
-6. Store the first number that is input when a user presses an operator button, and also save which operator has been chosen, then operate() on then when the " = " button is pressed
-    - should run so that operate() updates the display with the solution
-    - THIS IS THE HARDEST PART: figuring out the logic for how to store all the values and call the operate function with them
-7. Users should be able to string together several operations, and get the right answer with each PAIR of numbers being evaluated at a time
-    - i.e. [ 12 + 7 - 5 * 3 ] would equal 42
-    - display should also update as strings of operations stretch
-8. Round numbers with long decimals, to avoid overflowing the display
-9. Pressing " = " before entering other info could cause problems !
-10. Display a snarky error message if user tries to divide by 0... and don't let it crash your calculator !
+## Table of contents
 
+- [Overview](#overview)
+  - [Built with](#built-with)
+- [Usage](#usage)
+- [Refactors](#refactors)
+- [Issues](#issues)
+- [Acknowledgments](#acknowledgments)
 
+## Overview
 
+This simple calculator's functions include addition, subtraction, multiplication, and division. It allows users to enter numbers with up to a single decimal point, and has a button to clear the main display and an All Clear button to clear out all displays.
 
-: : : :  : :  : : : : : : :  : :  :NEXT : : : : STEPS: : : : : :  : : :: :  : : : : : : :  : :
+<img src="initialSetup.png" width="250">
 
+#### Built with
 
-- decimal button
-    - check if mainDisplay already has a decimal in it
->>>>>>>DONE
-- solution
-    - limit the number of decimal points places displayed
-    OR
-    - convert to string and limit the number of characters displayed
-    ?
->>>>>>>>DONE
+- JavaScript
+- HTML
+- CSS
+- jQuery
 
-: : : : : ::  : : : :: : :  :: : :  : : : :  : : :  : : :  : : :: : :  : : :  : : : :  : :  : 
+## Usage
 
+#### Display
 
+There are two displays: one larger main display for digits entered, and a smaller top display for showing digits entered before the operator and results of an operation.
 
-Finish next steps
-Went through numbered list of requirements for the project, and all tests are passed.
+<img src="AllowsNewNumInput.png" width="200"> <img src="movesResultToTopWhenOperator.png" width="200">
 
-BONUS::: : :
-want to add a "C" button to backspace mainDisplay.textContent from the right
->>>>>>>>>>>>>DONE
+When a new operator (+, -, \*, /) is clicked, the results of the previous operation is displayed on top with the first operand as well as the operator, and the main display is cleared for entered a new number.
 
+<img src="displaysOnTopWhenOperator.png" width="250">
 
-BONUS::::
-want to add keyboard support !!
+When the equal (=) button is clicked, the top display shows the full operation with both operands and the operator used, and the result is displayed on the main display.
+
+<img src="keepsTopDisplayWithResult.png" width="250">
+
+#### Decimal Point
+
+Users may enter up to a single decimal point in a number. If the decimal point is entered at the beginning of a number, a zero (0) will appear before the decimal point.
+
+<img src="allowsDecimalPoint.png" width="250">
+
+#### Limit of Digit Display
+
+When entered a number, the display limits the number of places in order to fit the main display screen.
+
+<img src="limitsNumLengthToFitDisplay.png" width="250">
+
+#### Clear functions
+
+The Clear ("C") button will clear the main display for a new entry, keeping the top display intact.
+
+<img src="clearedForNextResult.png" width="200">
+
+<img src="clearButton.png" width="200">
+
+<br/>
+<br/>
+The All Clear ("AC") button will reset and clear all displays.
+
+## Refactors
+
+This calculator was initially built with vanilla JavaScript, HTML, and CSS, and was later refactored to use the jQuery library for its main functionalities.
+
+## Issues
+
+- [ ] The clear button clears the main display and keeps the previous operation displayed on top, but this previous operation can no longer be worked with. It is simply a display and is erased from future functioning.
+
+## Acknowledgments
+
+Author: [Emily Knott](www.emilyknott.com)
+
+Initially built for [The Odin Project's Foundations Course: Final Project](https://www.theodinproject.com/lessons/foundations-calculator).
+
+It has been refactored to meet the project specifications of freeCodeCamp's [Front End Development Libraries Course](https://www.freecodecamp.org/learn/front-end-development-libraries/).
