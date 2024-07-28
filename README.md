@@ -75,7 +75,7 @@ This calculator was initially built with vanilla JavaScript, HTML, and CSS, and 
 
 ## Acknowledgments
 
-Author: [Emily Knott](www.emilyknott.com)
+Author: [Emily Knott](https://www.emilyknott.com)
 
 Initially built for [The Odin Project's Foundations Course: Final Project](https://www.theodinproject.com/lessons/foundations-calculator).
 
